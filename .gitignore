@@ -1,52 +1,31 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <string.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main()
+{
+    char myString[100];
+    int a[10],i;
+    
+    printf("enter a word\n");
+    scanf("%s" , myString);
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    int l = strlen(myString);
 
-# Precompiled Headers
-*.gch
-*.pch
+    for(int j = 0; j < l; j++)
+    {
+        int d = myString[j];
+        //printf("%d" , d); //the decimal value of the string
+        for(i = 0; d > 0; i++)
+    {
+        a[i] = d % 2;
+        d = d / 2;
+    }
+    for(i = i - 1; i >= 0; i--)
+        {
+        printf("%d" , a[i]); //the binary value of the string
+        }
+        printf("\n");
+    }
+    return 0;
+}
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
